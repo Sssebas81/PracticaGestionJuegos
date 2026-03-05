@@ -17,6 +17,10 @@ export class UsersService {
 
     ){}
 
+    findByName(username:string){
+        return this.userRepository.findOneBy({username})
+    }
+
     findAll(){
         return this.userRepository.find();
     }
