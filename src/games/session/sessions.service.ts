@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import {GamesService} from './games.service';
-import {UsersService} from '@/auth/user/user.service';
 import {Repository} from 'typeorm';
 import {Session} from 'inspector';
 import {InjectRepository} from '@nestjs/typeorm';
+
+import {GamesService} from '../games.service';
+import {UsersService} from '@/auth/user/user.service';
 import {UpdateSessionDto} from './dto/update-session.dto';
 
 @Injectable()

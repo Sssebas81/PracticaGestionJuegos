@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import {InjectRepository} from '@nestjs/typeorm';
-import {GamesService} from './games.service';
+import {GamesService} from '../games.service';
 import {UsersService} from '@/auth/user/user.service';
-import {Participant} from './entities/participant.entity';
+import {Participant} from '../entities/participant.entity';
 import {Repository} from 'typeorm/browser/repository/Repository.js';
 import {UpdateParticipantDto} from './dto/update-participant.dto';
 

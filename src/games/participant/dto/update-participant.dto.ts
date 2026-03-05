@@ -1,5 +1,5 @@
 import {PartialType} from "@nestjs/mapped-types";
-import {CreateGameDto} from "./create-game.dto";    
+import {CreateGameDto} from "../../dto/create-game.dto";    
 import {CreateParticipantDto} from "./create-participant.dto";
 
 

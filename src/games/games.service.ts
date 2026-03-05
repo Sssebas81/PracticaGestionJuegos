@@ -26,6 +26,7 @@ export class GamesService {
         return this.gameRepository.findOneBy({id})
     }
 
+    
     async remove (id:number){
         const result = await this.gameRepository.delete(id);
 
