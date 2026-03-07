@@ -6,6 +6,7 @@ import {RolesModule} from '../roles/roles.module';
 
 @Module({
   providers: [UsersService],
-  imports: [TypeOrmModule.forFeature([User]), RolesModule]
+  imports: [TypeOrmModule.forFeature([User]), RolesModule],
+  exports: [UsersService],
 })
 export class UsersModule {}

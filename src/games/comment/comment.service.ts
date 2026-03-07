@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import {InjectRepository} from '@nestjs/typeorm';
 import {Repository} from 'typeorm';
 
@@ -13,7 +13,7 @@ export class CommentService {
         @InjectRepository(Comment)
         private readonly commentRepository: Repository<Comment>,
         private readonly userService: UsersService,
-        private readonly gameService: GamesService
+        private readonly gameService: GamesService,
     ) {}   
 
     findAll(){

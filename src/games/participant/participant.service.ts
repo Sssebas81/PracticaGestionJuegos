@@ -3,10 +3,11 @@ import {InjectRepository} from '@nestjs/typeorm';
 import {GamesService} from '../games.service';
 import {UsersService} from '@/auth/user/user.service';
 import {Participant} from '../entities/participant.entity';
-import {Repository} from 'typeorm/browser/repository/Repository.js';
+import {Repository} from 'typeorm';
 import {UpdateParticipantDto} from './dto/update-participant.dto';
 import {SessionsService} from '../session/sessions.service';
 import {CreateParticipantDto} from './dto/create-participant.dto';
+
 
 @Injectable()
 export class ParticipantService {
