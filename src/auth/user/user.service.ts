@@ -17,8 +17,8 @@ export class UsersService {
 
     ){}
 
-    findByName(username:string){
-        return this.userRepository.findOneBy({username})
+    findById(id:number){
+        return this.userRepository.findOneBy({id})
     }
 
     findAll(){

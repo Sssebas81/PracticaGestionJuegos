@@ -1,8 +1,10 @@
+import {GameCategory} from "../entities/game.entity";
+
 export class CreateGameDto{
     name: string;
     description: string;
     min_players: number;
     max_players: number;
-    category: string;
-    created_by: string;
+    category: GameCategory;
+    created_by: number;
 }

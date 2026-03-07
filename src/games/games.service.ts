@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common';
-import {Game} from './entities/game.entity';
 import {Repository} from 'typeorm';
 import {InjectRepository} from '@nestjs/typeorm';
+
+import {Game} from './entities/game.entity';
 import { UpdateGameDto } from './dto/update-game.dto';
 import {UsersService} from '@/auth/user/user.service';
 import {CreateGameDto} from './dto/create-game.dto';
@@ -16,6 +17,10 @@ export class GamesService {
         private readonly userService: UsersService
 
     ){}
+
+    findById(id:number){
+        return this.gameRepository.findOneBy({id})
+    }
 
     findAll(){
         return this.gameRepository.find();
@@ -40,17 +45,16 @@ export class GamesService {
     async create (createGameDto: CreateGameDto){
         
         
-        const nameCreator = await this.userService.findByName(createGameDto.created_by)
+        const creator = await this.userService.findById(createGameDto.created_by)
 
-        if (!nameCreator){
+        if (!creator){
 
             throw new Error('Creator not found')
         }
 
         const newGame = this.gameRepository.create({
             ...createGameDto,
-            nameCreator
-            
+            createdBy:creator
         })
 
         return this.gameRepository.save(newGame)
