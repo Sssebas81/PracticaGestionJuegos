@@ -8,7 +8,6 @@ import { CatModule } from './cats/cat.module';
 import { AuthModule } from './auth/auth.module';
 import { GamesModule } from './games/games.module';
 import { SessionsModule } from './games/session/sessions.module';
-import { RolesController } from './roles/roles.controller';
 
 type SupportedDbTypes = 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mongodb' | 'oracle';
 @Module({
@@ -33,7 +32,7 @@ type SupportedDbTypes = 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mongodb' 
         GamesModule,
         SessionsModule,
     ],
-    controllers: [AppController, RolesController],
+    controllers: [AppController],
     providers: [AppService],
 })
 export class AppModule {}
