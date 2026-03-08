@@ -18,6 +18,10 @@ export class ParticipantService {
         private readonly sessionsService: SessionsService
     ){}
 
+    findById(id: number) {
+        return this.participantRepository.findOne({ where: { id }, relations: ['user', 'session'] });
+    }
+
     findAll(){
         return this.participantRepository.find();
     }

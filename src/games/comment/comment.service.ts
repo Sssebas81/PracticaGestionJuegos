@@ -16,6 +16,10 @@ export class CommentService {
         private readonly gameService: GamesService,
     ) {}   
 
+    findById(id: number) {
+        return this.commentRepository.findOne({ where: { id }, relations: ['user', 'game'] });
+    }
+
     findAll(){
             return this.commentRepository.find();
         }

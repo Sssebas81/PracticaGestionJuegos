@@ -5,9 +5,11 @@ import {ParticipantService} from './participant.service';
 import {Session} from '../entities/session.entity';
 import {SessionsModule} from '../session/sessions.module';
 import {UsersModule} from '@/auth/user/user.module';
+import { ParticipantController } from './participant.controller';
 
 @Module({
     imports: [TypeOrmModule.forFeature([Participant]), SessionsModule, UsersModule],
-    providers: [ParticipantService]
+    providers: [ParticipantService],
+    controllers: [ParticipantController]
 })
 export class ParticipantModule {}
