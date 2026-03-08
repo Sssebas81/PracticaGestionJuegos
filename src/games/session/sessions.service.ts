@@ -7,7 +7,6 @@ import {GamesService} from '../games.service';
 import {UsersService} from '@/auth/user/user.service';
 import {UpdateSessionDto} from './dto/update-session.dto';
 import {CreateSessionDto} from './dto/create-session.dto';
-import { User } from '@/auth/entities/user.entity';
 
 
 @Injectable()
