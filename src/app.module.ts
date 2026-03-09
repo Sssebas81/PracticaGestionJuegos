@@ -8,6 +8,8 @@ import { CatModule } from './cats/cat.module';
 import { AuthModule } from './auth/auth.module';
 import { GamesModule } from './games/games.module';
 import { SessionsModule } from './games/session/sessions.module';
+import {ParticipantModule} from './games/participant/participant.module';
+import {CommentModule} from './games/comment/comment.module';
 
 type SupportedDbTypes = 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mongodb' | 'oracle';
 @Module({
@@ -31,6 +33,8 @@ type SupportedDbTypes = 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mongodb' 
         }),
         GamesModule,
         SessionsModule,
+        ParticipantModule,
+        CommentModule
     ],
     controllers: [AppController],
     providers: [AppService],

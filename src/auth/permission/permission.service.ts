@@ -15,6 +15,7 @@ export class PermissionService {
     findById(id:number){
         return this.permissionRepository.findOneBy({id})
     }
+    
     findAll(){
         return this.permissionRepository.find();
     }

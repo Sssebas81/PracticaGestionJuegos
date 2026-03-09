@@ -43,7 +43,7 @@ export class Game {
     @Column({ type: 'enum', enum: GameCategory })
     category: GameCategory;
 
-    @ManyToOne(() => User, (user) => user.games, { nullable: false }) // Many-to-one relationship with User entity, meaning that each game can be created by one user, but a user can create many games
+    @ManyToOne(() => User, (user) => user.games, { nullable: false, eager: true }) // Many-to-one relationship with User entity, meaning that each game can be created by one user, but a user can create many games
     @JoinColumn({ name: 'created_by' }) // This decorator specifies the foreign key column name in the games table that references the users table
     createdBy: User; // This property represents the user who created the game, is of type User and not an array because it's a many-to-one relationship
 

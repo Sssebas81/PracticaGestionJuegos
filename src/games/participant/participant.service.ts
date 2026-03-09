@@ -18,7 +18,7 @@ export class ParticipantService {
     ){}
 
     findById(id: number) {
-        return this.participantRepository.findOne({ where: { id }, relations: ['user', 'session'] });
+        return this.participantRepository.findOneBy({ id });
     }
 
     findAll(){

@@ -12,7 +12,7 @@ export class SessionController {
     }
 
     @Get(':id')
-    findById(@Param('id') id: string) {
+    findById(@Param ('id') id: string) {
         return this.sessionService.findById(+id);
     }
 

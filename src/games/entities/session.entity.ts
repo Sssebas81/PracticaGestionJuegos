@@ -26,11 +26,11 @@ export class Session {
     @Column({ length: 255, nullable: true }) // This column stores additional notes about the session, with a maximum length of 255 characters, and is optional (nullable)
     notes: string;
 
-    @ManyToOne(() => Game, (game) => game.sessions, { nullable: false }) // Many-to-one relationship with Game entity, meaning that each session is associated with one game, but a game can have many sessions
+    @ManyToOne(() => Game, (game) => game.sessions, { nullable: false, eager: true }) // Many-to-one relationship with Game entity, meaning that each session is associated with one game, but a game can have many sessions
     @JoinColumn({ name: 'game_id' }) // This decorator specifies the foreign key column name in the sessions table that references the games table
     game: Game;
 
-    @ManyToOne(() => User, (user) => user.sessions, { nullable: false }) // Many-to-one relationship with User entity, meaning that each session is associated with one user, but a user can have many sessions
+    @ManyToOne(() => User, (user) => user.sessions, { nullable: false, eager: true }) // Many-to-one relationship with User entity, meaning that each session is associated with one user, but a user can have many sessions
     @JoinColumn({ name: 'host_id' }) // This decorator specifies the foreign key column name in the sessions table that references the users table
     host: User;
 
