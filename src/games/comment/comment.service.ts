@@ -33,6 +33,11 @@ export class CommentService {
     
             return null;
         }
+
+        async update (id:number, content: string){
+            await this.commentRepository.update(id, { content })
+            return this.commentRepository.findOneBy({id})
+        }
     
         async create (createCommentDto: CreateCommentDto){
             
