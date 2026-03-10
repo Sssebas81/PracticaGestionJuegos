@@ -68,10 +68,11 @@ export class RolePermissionService {
             throw new Error('Permission not found')
         }
 
-        //Transformar del DTO al user
+        
         const newRolePermission = this.rolePermissionRepository.create({
             role,
-            permission})
+            permission
+        })
 
         return this.rolePermissionRepository.save(newRolePermission)
     }

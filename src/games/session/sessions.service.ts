@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+    import { Injectable } from '@nestjs/common';
 import {Repository} from 'typeorm';
 import {Session} from '../entities/session.entity';
 import {InjectRepository} from '@nestjs/typeorm';
@@ -34,6 +34,7 @@ export class SessionsService {
             status: updateSessionDto.status,
             notes: updateSessionDto.notes
         })
+        
         return this.sessionRepository.findOneBy({id})
     }
 
@@ -48,7 +49,6 @@ export class SessionsService {
             throw new Error('Game not found')
         }
 
-        //Transformar del DTO a la session
         const newSession = this.sessionRepository.create({
             ...createSessionDto,
             host,
