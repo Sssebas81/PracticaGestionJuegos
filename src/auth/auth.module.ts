@@ -10,4 +10,5 @@ import { PermissionModule } from './permission/permission.module';
   imports: [UsersModule, RolesModule, RolePermissionModule, PermissionModule],
   
 })
+
 export class AuthModule {}
