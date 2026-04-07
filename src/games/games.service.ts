@@ -26,10 +26,10 @@ export class GamesService {
         return this.gameRepository.find();
     }
 
-    async update (id:number, updateGameDto: UpdateGameDto){
-        await this.gameRepository.update(id, updateGameDto)
-        return this.gameRepository.findOneBy({id})
-    }
+        async update (id:number, updateGameDto: UpdateGameDto){
+            await this.gameRepository.update(id, updateGameDto)
+            return this.gameRepository.findOneBy({id})
+        }
 
     
     async remove (id:number){

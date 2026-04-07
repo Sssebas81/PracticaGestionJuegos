@@ -52,4 +52,10 @@ export class UsersService {
 
         return this.userRepository.save(newUser)
     }
+
+    findByEmail(email:string){
+        return this.userRepository.findOne({
+            where: {email},
+        })
+    }
 }
